@@ -15,22 +15,17 @@ public class CalculadoraServidor {
                 Socket socket = serverSocket.accept();
                 System.out.println("Cliente conectado desde " + socket.getInetAddress());
 
-                // Crear flujos de entrada/salida para la comunicación con el cliente
                 DataInputStream dis = new DataInputStream(socket.getInputStream());
                 DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 
-                // Leer operación y operandos del cliente
                 String operacion = dis.readUTF();
                 double num1 = dis.readDouble();
                 double num2 = dis.readDouble();
 
-                // Calcular el resultado
                 double resultado = calcular(operacion, num1, num2);
 
-                // Enviar el resultado al cliente
                 dos.writeDouble(resultado);
 
-                // Cerrar conexiones
                 socket.close();
                 dis.close();
                 dos.close();
