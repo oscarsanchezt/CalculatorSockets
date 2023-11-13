@@ -120,7 +120,7 @@ public class Main extends JFrame {
         contentPane.add(separator);
 
         fielResultado = new JTextField();
-        fielResultado.setBounds(155, 210, 122, 26);
+        fielResultado.setBounds(113, 210, 216, 26);
         contentPane.add(fielResultado);
         fielResultado.setColumns(10);
 
